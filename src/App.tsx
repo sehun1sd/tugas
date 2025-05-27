@@ -11,18 +11,37 @@ import Footer from './components/Footer';
 function App() {
   return (
     <ThemeProvider>
-      <div className="relative min-h-screen overflow-x-hidden">
+      <div className="relative min-h-screen overflow-hidden">
+        {/* Background with stars and gradient */}
         <Background />
+        
+        {/* Navigation */}
         <Navbar currentLang="id" onToggleLanguage={() => {}} />
+        
+        {/* Main Content */}
         <main>
+          {/* Hero Section with animated entrance */}
           <Hero />
+          
+          {/* Features Section with staggered reveal */}
           <Features />
-          <section id="demo" className="py-20">
+          
+          {/* Demo Section with voice recognition */}
+          <section id="demo" className="relative py-20 overflow-hidden">
             <div className="container mx-auto px-4">
-              <ShoppingCalculator />
+              {/* Decorative elements */}
+              <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-600/10 rounded-full filter blur-3xl" />
+              <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full filter blur-3xl" />
+              
+              {/* Voice Shopping Calculator */}
+              <div className="relative">
+                <ShoppingCalculator />
+              </div>
             </div>
           </section>
         </main>
+        
+        {/* Footer */}
         <Footer />
       </div>
     </ThemeProvider>
